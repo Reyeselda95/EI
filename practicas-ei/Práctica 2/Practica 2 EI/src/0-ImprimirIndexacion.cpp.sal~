@@ -1,0 +1,8 @@
+Terminos indexados:
+pal3	Frecuencia total: 1	fd: 1	Id.Doc: 1	ft: 1	4
+pal1	Frecuencia total: 2	fd: 1	Id.Doc: 1	ft: 2	0	3
+pal4	Frecuencia total: 1	fd: 1	Id.Doc: 2	ft: 1	3
+pal2	Frecuencia total: 3	fd: 2	Id.Doc: 2	ft: 2	0	2	Id.Doc: 1	ft: 1	2
+Documentos indexados: 
+corpus_corto/fichero1.txt	idDoc: 1	numPal: 6	numPalSinParada: 4	numPalDiferentes: 3	tamBytes: 30
+corpus_corto/fichero2.txt	idDoc: 2	numPal: 5	numPalSinParada: 3	numPalDiferentes: 2	tamBytes: 23

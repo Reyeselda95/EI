@@ -1,0 +1,4 @@
+pal4	Frecuencia total: 1	fd: 1	Id.Doc: 2	ft: 1
+pal2	Frecuencia total: 3	fd: 2	Id.Doc: 2	ft: 2	Id.Doc: 1	ft: 1
+pal3	Frecuencia total: 1	fd: 1	Id.Doc: 1	ft: 1
+pal1	Frecuencia total: 2	fd: 1	Id.Doc: 1	ft: 2

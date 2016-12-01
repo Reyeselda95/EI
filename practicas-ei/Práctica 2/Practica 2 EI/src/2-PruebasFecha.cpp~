@@ -1,0 +1,105 @@
+#include <iostream>
+#include <string>
+#include <list>
+#include <sys/resource.h>
+#include "tokenizador.h"
+#include "indexadorInformacion.h"
+
+using namespace std;
+
+double getcputime(void) {
+	struct timeval tim;
+	struct rusage ru;
+	getrusage(RUSAGE_SELF, &ru);
+	tim = ru.ru_utime;
+	double t = (double) tim.tv_sec + (double) tim.tv_usec / 1000000.0;
+	tim = ru.ru_stime;
+	t += (double) tim.tv_sec + (double) tim.tv_usec / 1000000.0;
+	return t;
+}
+
+int main(void) {
+	string menor = "es menor que";
+	string mayor = "es mayor que o igual que";
+
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha1(25, 04, 2010,19,30,0);
+	Fecha fecha2(25, 04, 2010,19,30,1);
+
+	//Segundos
+	if (fecha1.Posterior(fecha2)) {
+		cout << fecha1 << endl << menor << endl << fecha2 << endl;
+	} else {
+		cout << fecha1 << endl << mayor << endl << fecha2 << endl;
+	}
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha3(25, 04, 2010,19,29,30);
+	Fecha fecha4(25, 04, 2010,19,30,0);
+
+	//Minutos
+	if (fecha3.Posterior(fecha4)) {
+		cout << fecha3 << endl << menor << endl << fecha4 << endl;
+	} else {
+		cout << fecha3 << endl << mayor << endl << fecha4 << endl;
+	}
+
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha5(25, 04, 2010,18,35,30);
+	Fecha fecha6(25, 04, 2010,19,30,0);
+
+	//horas
+	if (fecha5.Posterior(fecha6)) {
+		cout << fecha5 << endl << menor << endl << fecha6 << endl;
+	} else {
+		cout << fecha5 << endl << mayor << endl << fecha6 << endl;
+	}
+
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha7(24, 04, 2010,20,35,30);
+	Fecha fecha8(25, 04, 2010,19,30,0);
+
+	//dia
+	if (fecha7.Posterior(fecha8)) {
+		cout << fecha7 << endl << menor << endl << fecha8 << endl;
+	} else {
+		cout << fecha7 << endl << mayor << endl << fecha8 << endl;
+	}
+
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha9(26, 03, 201020,35,30);
+	Fecha fecha10(25, 04, 2010,19,30,0);
+
+	//mes
+	if (fecha9.Posterior(fecha10)) {
+		cout << fecha9 << endl << menor << endl << fecha10 << endl;
+	} else {
+		cout << fecha9 << endl << mayor << endl << fecha10 << endl;
+	}
+
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha11(26, 05, 2009,20,35,30);
+	Fecha fecha12(25, 04, 2010,19,30,0);
+
+	//anyo
+	if (fecha11.Posterior(fecha12)) {
+		cout << fecha11 << endl << menor << endl << fecha12 << endl;
+	} else {
+		cout << fecha11 << endl << mayor << endl << fecha12 << endl;
+	}
+
+	cout << endl;
+	//	int segundos, minutos, horas, dia, mes, anyo;
+	Fecha fecha13(26, 05, 2009,20,35,30);
+
+	//anyo
+	if (fecha13.Posterior(fecha13)) {
+		cout << fecha13 << endl << menor << endl << fecha13 << endl;
+	} else {
+		cout << fecha13 << endl << mayor << endl << fecha13 << endl;
+	}
+}
